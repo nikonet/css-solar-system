@@ -1,0 +1,64 @@
+/* HOVEDANIMASJONER */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0.3;
+    }
+    80% {
+        opacity: 0.6
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translate(-14rem, -4rem);
+    }
+    80% {
+        transform: translate(16rem, -2rem);
+    }
+    95% {
+        transform: translate(-2rem, 0);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes sunFlare {
+    0% {
+        background: #f89a55;
+        box-shadow: 0 0 20px #f89a55;
+        filter: drop-shadow(1px 1px 5px yellow);
+    }
+    90% {
+        box-shadow: 0 0 80px #ff5e71;
+        filter: drop-shadow(1px 1px 10px yellow);
+        background: #ff6c00;
+    }
+    100% {
+        box-shadow: 0 0 0px #ffa25e;
+        filter: drop-shadow(1px 1px 5px yellow);
+        background: #f89a55;
+    }
+}
+
+@keyframes orbit {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
