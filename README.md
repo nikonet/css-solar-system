@@ -1,2 +1,6 @@
 # CSS-Solar-System
-CSS solar system animation
+Just a simple solar system animation in pure CSS.
+
+Started as part of an assignment in my studies.
+
+
