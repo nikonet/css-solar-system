@@ -4,10 +4,35 @@ Nikolai N.
 github@nikonet
 */
 
+/* REFERENCE TRUE-TO-SCALE PLANETARY SIZES AND ORBITAL DISTANCES */
 :root {
-    --earth-size: 1px;
+    /* EARTH ROOT SIZE. When adjusted, everything else scales accordingly */
+    --earth-size: 5px;
     --earth-orbital-period: 12s;
-    --earth-orbital-distance: 500px;
+    --earth-orbital-distance: calc(var(--earth-size) * 11727);
+    /* MERCURY */
+    --mercury-size: calc(var(--earth-size) / 100 * 38);
+    --mercury-distance: calc(var(--earth-orbital-distance) / 2.52);
+    /* VENUS */
+    --venus-size: calc(var(--earth-size) / 100 * 95);
+    --venus-distance: calc(var(--earth-orbital-distance) / 1.39);
+    /* MARS */
+    --mars-size: calc(var(--earth-size) / 100 * 53);
+    --mars-distance: calc(var(--earth-orbital-distance) / 1.51);
+    /* JUPITER */
+    --jupiter-size: calc(var(--earth-size) / 100 * 1120);
+    --jupiter-distance: calc(var(--earth-orbital-distance) / 5.19);
+    /* SATURN */
+    --saturn-size: calc(var(--earth-size) / 100 * 945);
+    --saturn-distance: calc(var(--earth-orbital-distance) / 9.53);
+    /* URANUS */
+    --uranus-size: calc(var(--earth-size) / 100 * 400);
+    --uranus-distance: calc(var(--earth-orbital-distance) / 19.17);
+    /* NEPTUNE */
+    --neptune-size: calc(var(--earth-size) / 100 * 388);
+    --neptune-distance: calc(var(--earth-orbital-distance) / 30);
+    /* THE SUN */
+    --sun-size: calc(var(--earth-size) * 109);
 }
 
 *,
@@ -18,12 +43,21 @@ github@nikonet
 
 html,
 body {
+    height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
 
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
 main {
+    height: 100%;
+    width: 100%;
     background: #222;
     font-family: arial, sans-serif;
 }
@@ -72,35 +106,36 @@ main {
     z-index: 999;
 }
 
+.info-box h4 {
+    margin: 1rem 0 0.25rem 0;
+}
+
 .info-box p {
     margin: 0.25rem;
+}
+
+.info-box p::before {
+    content: var(--earth-size);
 }
 
 
 /* SPACE BACKGROUND */
 
-.space {
-    height: 100vh;
+#space {
+    height: 100%;
     width: 100%;
     position: relative;
     display: block;
     background: #111;
-    transform-style: preserve-3d;
-    perspective: 200px;
-    perspective-origin: 10% 10%;
     /* animation: systemScale 4s ease-in 6s 1 forwards; */
-    overflow: hidden;
 }
 
 .star {
-    display: inline-block;
     position: absolute;
-    left: 20%;
-    top: 20%;
     width: 2px;
     height: 2px;
     background: #FFF;
-    box-shadow: 0 0 5px #FFF;
+    box-shadow: 0 0 5px #e0e0e0;
 }
 
 .star-2 {
@@ -131,12 +166,16 @@ main {
 
 /* SOLAR SYSTEM */
 
-.solar-system {
+#solar-system {
     width: 100%;
-    height: 100vh;
-    transform-style: preserve-3d;
+    height: 100%;
     display: flex;
     justify-content: center;
+    overflow: hidden;
+}
+
+#solar-system:target {
+    display: flex;
 }
 
 .pos {
@@ -144,17 +183,16 @@ main {
     align-self: center;
     height: 10rem;
     width: 10rem;
-    border-radius: 50%;
 }
 
-.sun {
-    height: calc(var(--earth-size) * 109);
-    width: calc(var(--earth-size) * 109);
+#sun {
+    height: 150px;
+    width: 150px;
     border-radius: 50%;
-    background: #ffe200;
+    background-color: #ffe200;
     box-shadow: 0 0 10px yellow;
-    animation: sunFlare 6s ease-in 0s infinite alternate;
     transform-style: preserve-3d;
+    animation: sunFlare 6s ease-in 0s infinite alternate;
 }
 
 
@@ -168,6 +206,13 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
     background-repeat: no-repeat;
     animation: rotate 10s linear normal forwards infinite;
     transform-style: preserve-3d;
+    transition: all 0.6s ease-in-out;
+    overflow: hidden;
+}
+
+.planet:target {
+    width: 200px !important;
+    height: 200px !important;
 }
 
 .planet-pos {
@@ -182,11 +227,11 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
     animation-duration: calc(var(--earth-orbital-period) / 12 * 3);
 }
 
-.mercury {
-    height: calc(var(--earth-size) / 100 * 38);
-    width: calc(var(--earth-size) / 100 * 38);
-    margin-top: calc(var(--earth-orbital-distance) / 2.52);
-    margin-left: calc(var(--earth-orbital-distance) / 2.52);
+#mercury {
+    height: var(--mercury-size);
+    width: var(--mercury-size);
+    margin-top: 150px;
+    margin-left: 150px;
     background-image: url("/assets/mercury.png");
 }
 
@@ -194,11 +239,11 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
     animation-duration: calc(var(--earth-orbital-period) / 12 * 7);
 }
 
-.venus {
-    height: calc(var(--earth-size) / 100 * 95);
-    width: calc(var(--earth-size) / 100 * 95);
-    margin-top: calc(var(--earth-orbital-distance) / 1.39);
-    margin-left: calc(var(--earth-orbital-distance) / 1.39);
+#venus {
+    height: var(--venus-size);
+    width: var(--venus-size);
+    margin-top: 170px;
+    margin-left: 170px;
     background-image: url("/assets/venus.png");
 }
 
@@ -206,11 +251,11 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
     animation-duration: var(--earth-orbital-period);
 }
 
-.earth {
+#earth {
     height: var(--earth-size);
     width: var(--earth-size);
-    margin-top: var(--earth-orbital-distance);
-    margin-left: var(--earth-orbital-distance);
+    margin-top: 210px;
+    margin-left: 210px;
     background-image: url("/assets/earth.png");
 }
 
@@ -218,11 +263,11 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
     animation-duration: calc(var(--earth-orbital-period) / 12 * 23);
 }
 
-.mars {
-    height: calc(var(--earth-size) / 100 * 53);
-    width: calc(var(--earth-size) / 100 * 53);
-    margin-top: calc(var(--earth-orbital-distance) * 1.51);
-    margin-left: calc(var(--earth-orbital-distance) * 1.51);
+#mars {
+    height: var(--mars-size);
+    width: var(--mars-size);
+    margin-top: 250px;
+    margin-left: 250px;
     background-image: url("/assets/mars.png");
 }
 
@@ -230,11 +275,11 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
     animation-duration: calc(var(--earth-orbital-period) / 12 * 142);
 }
 
-.jupiter {
-    height: calc(var(--earth-size) / 100 * 1120);
-    width: calc(var(--earth-size) / 100 * 1120);
-    margin-top: calc(var(--earth-orbital-distance) * 5.19);
-    margin-left: calc(var(--earth-orbital-distance) * 5.19);
+#jupiter {
+    height: var(--jupiter-size);
+    width: var(--jupiter-size);
+    margin-top: 280px;
+    margin-left: 280px;
     background-image: url("/assets/jupiter.png");
 }
 
@@ -242,11 +287,11 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
     animation-duration: calc(var(--earth-orbital-period) / 12 * 354);
 }
 
-.saturn {
-    height: calc(var(--earth-size) / 100 * 945);
-    width: calc(var(--earth-size) / 100 * 945);
-    margin-top: calc(var(--earth-orbital-distance) * 9.53);
-    margin-left: calc(var(--earth-orbital-distance) * 9.53);
+#saturn {
+    height: var(--saturn-size);
+    width: var(--saturn-size);
+    margin-top: 330px;
+    margin-left: 330px;
     background-image: url("/assets/saturn.png");
 }
 
@@ -254,11 +299,11 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
     animation-duration: calc(var(--earth-orbital-period) / 12 * 1009);
 }
 
-.uranus {
-    height: calc(var(--earth-size) / 100 * 400);
-    width: calc(var(--earth-size) / 100 * 400);
-    margin-top: calc(var(--earth-orbital-distance) * 19.17);
-    margin-left: calc(var(--earth-orbital-distance) * 19.17);
+#uranus {
+    height: var(--uranus-size);
+    width: var(--uranus-size);
+    margin-top: 380px;
+    margin-left: 380px;
     background-image: url("/assets/uranus.png");
 }
 
@@ -266,10 +311,10 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
     animation-duration: calc(var(--earth-orbital-period) / 12 * 1979);
 }
 
-.neptune {
-    height: calc(var(--earth-size) / 100 * 388);
-    width: calc(var(--earth-size) / 100 * 388);
-    margin-top: calc(var(--earth-orbital-distance) * 30);
-    margin-left: calc(var(--earth-orbital-distance) * 30);
+#neptune {
+    height: var(--neptune-size);
+    width: var(--neptune-size);
+    margin-top: 420px;
+    margin-left: 420px;
     background-image: url("/assets/neptune.png");
 }
