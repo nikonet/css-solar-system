@@ -121,8 +121,27 @@ main {
 }
 
 .controller-btn {
+    height: 3rem;
     font-size: 2rem;
     margin: 2rem;
+    transition: all 0.3s ease-in;
+}
+
+.controller-btn:target {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.controller-btn:hover {
+    border: 1px solid #e0e0e0;
+}
+
+#pause:target ~ .planet-pos {
+    animation-play-state: paused;
+}
+
+#play:target ~ .planet-pos {
+    animation-play-state: running;
 }
 
 /* SPACE BACKGROUND */
@@ -216,16 +235,6 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
     height: 200px;
     margin: 6rem;
 }
-
-#pause:target ~ .planet-pos {
-    animation-play-state: paused;
-}
-
-#play:target ~ .planet-pos {
-    animation-play-state: running;
-}
-
-
 
 .planet-pos {
     animation-name: orbit;
