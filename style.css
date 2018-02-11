@@ -101,6 +101,7 @@ main {
     position: absolute;
     top: 30vh;
     left: 0;
+    max-width: 28rem;
     padding: 0 2rem;
     color: #fff;
     z-index: 999;
@@ -114,10 +115,15 @@ main {
     margin: 0.25rem;
 }
 
-.info-box p::before {
-    content: var(--earth-size);
+.info-box a {
+    text-decoration: underline;
+    color: lightblue;
 }
 
+.controller-btn {
+    font-size: 2rem;
+    margin: 2rem;
+}
 
 /* SPACE BACKGROUND */
 
@@ -127,6 +133,7 @@ main {
     position: relative;
     display: block;
     background: #111;
+    overflow: hidden;
     /* animation: systemScale 4s ease-in 6s 1 forwards; */
 }
 
@@ -139,28 +146,28 @@ main {
 }
 
 .star-2 {
-    left: 14%;
+    left: 4%;
     top: 69%;
 }
 
 .star-3 {
-    left: 83%;
-    top: 19%;
+    left: 93%;
+    top: 9%;
 }
 
 .star-4 {
     left: 60%;
-    top: 90%;
+    top: 95%;
 }
 
 .star-5 {
-    left: 72%;
-    top: 48%;
+    left: 92%;
+    top: 88%;
 }
 
 .star-6 {
     left: 32%;
-    top: 43%;
+    top: 13%;
 }
 
 
@@ -171,11 +178,6 @@ main {
     height: 100%;
     display: flex;
     justify-content: center;
-    overflow: hidden;
-}
-
-#solar-system:target {
-    display: flex;
 }
 
 .pos {
@@ -207,13 +209,23 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
     animation: rotate 10s linear normal forwards infinite;
     transform-style: preserve-3d;
     transition: all 0.6s ease-in-out;
-    overflow: hidden;
 }
 
-.planet:target {
-    width: 200px !important;
-    height: 200px !important;
+#solar-system .planet:target {
+    width: 200px;
+    height: 200px;
+    margin: 6rem;
 }
+
+#pause:target ~ .planet-pos {
+    animation-play-state: paused;
+}
+
+#play:target ~ .planet-pos {
+    animation-play-state: running;
+}
+
+
 
 .planet-pos {
     animation-name: orbit;
@@ -227,7 +239,7 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
     animation-duration: calc(var(--earth-orbital-period) / 12 * 3);
 }
 
-#mercury {
+.mercury-pos .planet {
     height: var(--mercury-size);
     width: var(--mercury-size);
     margin-top: 150px;
@@ -239,7 +251,7 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
     animation-duration: calc(var(--earth-orbital-period) / 12 * 7);
 }
 
-#venus {
+.venus-pos .planet {
     height: var(--venus-size);
     width: var(--venus-size);
     margin-top: 170px;
@@ -251,7 +263,7 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
     animation-duration: var(--earth-orbital-period);
 }
 
-#earth {
+.earth-pos .planet {
     height: var(--earth-size);
     width: var(--earth-size);
     margin-top: 210px;
@@ -263,7 +275,7 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
     animation-duration: calc(var(--earth-orbital-period) / 12 * 23);
 }
 
-#mars {
+.mars-pos .planet {
     height: var(--mars-size);
     width: var(--mars-size);
     margin-top: 250px;
@@ -275,7 +287,7 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
     animation-duration: calc(var(--earth-orbital-period) / 12 * 142);
 }
 
-#jupiter {
+.jupiter-pos .planet {
     height: var(--jupiter-size);
     width: var(--jupiter-size);
     margin-top: 280px;
@@ -287,7 +299,7 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
     animation-duration: calc(var(--earth-orbital-period) / 12 * 354);
 }
 
-#saturn {
+.saturn-pos .planet {
     height: var(--saturn-size);
     width: var(--saturn-size);
     margin-top: 330px;
@@ -299,7 +311,7 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
     animation-duration: calc(var(--earth-orbital-period) / 12 * 1009);
 }
 
-#uranus {
+.uranus-pos .planet {
     height: var(--uranus-size);
     width: var(--uranus-size);
     margin-top: 380px;
@@ -311,7 +323,7 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
     animation-duration: calc(var(--earth-orbital-period) / 12 * 1979);
 }
 
-#neptune {
+.neptune-pos .planet {
     height: var(--neptune-size);
     width: var(--neptune-size);
     margin-top: 420px;

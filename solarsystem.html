@@ -13,20 +13,24 @@
     <main>
         <header class="title-container">
             <h1 id="title">
-                <span>CSS</span>
-                <span>Solar</span>
-                <span>System</span>
+                <a href="solarsystem.html">
+                    <span>CSS</span>
+                    <span>Solar</span>
+                    <span>System</span>
+                </a>
             </h1>
         </header>
         <aside class="info-box">
             <h2>Everything is relative</h2>
+            <p>The planet size and orbital period is to scale. Distance is not.</p>
             <h4>Time</h4>
             <p>1 second = 1 month</p>
             <h4>Size</h4>
             <p>1 pixel = 2548 km</p>
-            <p>All planets are to scale relative to each other.</p>
-            <p>Earth is 5 pixels here.</p>
+            <p>Earth here is 5 pixels.</p>
             <nav>
+                <h4>Planets</h4>
+                <p>Click a planet to zoom in:</p>
                 <ul>
                     <li><a href="#mercury">Mercury</a></li>
                     <li><a href="#venus">Venus</a></li>
@@ -36,7 +40,7 @@
                     <li><a href="#saturn">Saturn</a></li>
                     <li><a href="#uranus">Uranus</a></li>
                     <li><a href="#neptune">Neptune</a></li>
-                </ul>              
+                </ul>             
             </nav>
         </aside>
         <div id="space">
@@ -49,30 +53,48 @@
                 <div class="star star-6"></div>
             </div>
             <div id="solar-system">
+                <a id="pause" class="controller-btn" href="#pause">Pause</a>
+                <a id="play" class="controller-btn" href="#play">Play</a>
                 <div id="sun" class="pos"></div>
                 <div class="mercury-pos pos planet-pos">
-                    <div id="mercury" class="planet"></div>
+                    <a href="#mercury">
+                        <div id="mercury" class="planet"></div>
+                    </a>
                 </div>
                 <div class="venus-pos pos planet-pos">
-                    <div id="venus" class="planet"></div>
+                    <a href="#venus">
+                        <div id="venus" class="planet"></div>
+                    </a>
                 </div>
                 <div class="earth-pos pos planet-pos">
-                    <div id="earth" class="planet"></div>
+                    <a href="#earth">
+                        <div id="earth" class="planet"></div>
+                    </a>
                 </div>
                 <div class="mars-pos pos planet-pos">
-                    <div id="mars" class="planet"></div>
+                    <a href="#mars">
+                        <div id="mars" class="planet"></div>
+                    </a>
                 </div>
                 <div class="jupiter-pos pos planet-pos">
-                    <div id="jupiter" class="planet"></div>
+                    <a href="#jupiter">
+                        <div id="jupiter" class="planet"></div>
+                    </a>
                 </div>
                 <div class="saturn-pos pos planet-pos">
-                    <div id="saturn" class="planet"></div>
+                    <a href="#saturn">
+                        <div id="saturn" class="planet"></div>
+                    </a>
                 </div>
                 <div class="uranus-pos pos planet-pos">
-                    <div id="uranus" class="planet"></div>
+                    <a href="#uranus">
+                        <div id="uranus" class="planet"></div>
+                    </a>
                 </div>
                 <div class="neptune-pos pos planet-pos">
-                    <div id="neptune" class="planet"></div>
+                    <a href="#neptune">
+                        <div id="neptune" class="planet"></div>
+                    </a>
                 </div>
             </div>
         </div>
