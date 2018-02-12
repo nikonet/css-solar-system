@@ -6,216 +6,214 @@ github@nikonet
 
 /* REFERENCE TRUE-TO-SCALE PLANETARY SIZES AND ORBITAL DISTANCES */
 :root {
-    /* EARTH ROOT SIZE. When adjusted, everything else scales accordingly */
-    --earth-size: 5px;
-    --earth-orbital-period: 12s;
-    --earth-orbital-distance: calc(var(--earth-size) * 11727);
-    /* MERCURY */
-    --mercury-size: calc(var(--earth-size) / 100 * 38);
-    --mercury-distance: calc(var(--earth-orbital-distance) / 2.52);
-    /* VENUS */
-    --venus-size: calc(var(--earth-size) / 100 * 95);
-    --venus-distance: calc(var(--earth-orbital-distance) / 1.39);
-    /* MARS */
-    --mars-size: calc(var(--earth-size) / 100 * 53);
-    --mars-distance: calc(var(--earth-orbital-distance) / 1.51);
-    /* JUPITER */
-    --jupiter-size: calc(var(--earth-size) / 100 * 1120);
-    --jupiter-distance: calc(var(--earth-orbital-distance) / 5.19);
-    /* SATURN */
-    --saturn-size: calc(var(--earth-size) / 100 * 945);
-    --saturn-distance: calc(var(--earth-orbital-distance) / 9.53);
-    /* URANUS */
-    --uranus-size: calc(var(--earth-size) / 100 * 400);
-    --uranus-distance: calc(var(--earth-orbital-distance) / 19.17);
-    /* NEPTUNE */
-    --neptune-size: calc(var(--earth-size) / 100 * 388);
-    --neptune-distance: calc(var(--earth-orbital-distance) / 30);
-    /* THE SUN */
-    --sun-size: calc(var(--earth-size) * 109);
+  /* EARTH ROOT SIZE. When adjusted, everything else scales accordingly */
+  --earth-size: 5px;
+  --earth-orbital-period: 12s;
+  --earth-orbital-distance: calc(var(--earth-size) * 11727);
+  /* MERCURY */
+  --mercury-size: calc(var(--earth-size) / 100 * 38);
+  --mercury-distance: calc(var(--earth-orbital-distance) / 2.52);
+  /* VENUS */
+  --venus-size: calc(var(--earth-size) / 100 * 95);
+  --venus-distance: calc(var(--earth-orbital-distance) / 1.39);
+  /* MARS */
+  --mars-size: calc(var(--earth-size) / 100 * 53);
+  --mars-distance: calc(var(--earth-orbital-distance) / 1.51);
+  /* JUPITER */
+  --jupiter-size: calc(var(--earth-size) / 100 * 1120);
+  --jupiter-distance: calc(var(--earth-orbital-distance) / 5.19);
+  /* SATURN */
+  --saturn-size: calc(var(--earth-size) / 100 * 945);
+  --saturn-distance: calc(var(--earth-orbital-distance) / 9.53);
+  /* URANUS */
+  --uranus-size: calc(var(--earth-size) / 100 * 400);
+  --uranus-distance: calc(var(--earth-orbital-distance) / 19.17);
+  /* NEPTUNE */
+  --neptune-size: calc(var(--earth-size) / 100 * 388);
+  --neptune-distance: calc(var(--earth-orbital-distance) / 30);
+  /* THE SUN */
+  --sun-size: calc(var(--earth-size) * 109);
 }
 
 *,
 *:before,
 *:after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 a {
-    color: #fff;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 
 main {
-    height: 100%;
-    width: 100%;
-    background: #222;
-    font-family: arial, sans-serif;
+  height: 100%;
+  width: 100%;
+  background: #222;
+  font-family: arial, sans-serif;
 }
 
 .title-container {
-    position: absolute;
-    display: flex;
-    padding: 0 2rem;
+  position: absolute;
+  display: flex;
+  padding: 0 2rem;
 }
 
 #title {
-    font-size: 3rem;
-    color: #fff;
-    display: block;
-    z-index: 999;
+  font-size: 3rem;
+  color: #fff;
+  display: block;
+  z-index: 999;
 }
 
 #title span {
-    display: block;
-    animation-name: slideIn, fadeIn;
-    animation-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  display: block;
+  animation-name: slideIn, fadeIn;
+  animation-timing-function: cubic-bezier(0.95, 0.05, 0.795, 0.035);
 }
 
 #title span::first-letter {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 #title span:first-child {
-    animation-duration: 1s;
+  animation-duration: 1s;
 }
 
 #title span:nth-child(2) {
-    animation-duration: 1.25s;
+  animation-duration: 1.25s;
 }
 
 #title span:last-child {
-    animation-duration: 1.5s;
+  animation-duration: 1.5s;
 }
 
 .info-box {
-    position: absolute;
-    top: 30vh;
-    left: 0;
-    max-width: 28rem;
-    padding: 0 2rem;
-    color: #fff;
-    z-index: 999;
+  position: absolute;
+  top: 30vh;
+  left: 0;
+  max-width: 28rem;
+  padding: 0 2rem;
+  color: #fff;
+  z-index: 999;
 }
 
 .info-box h4 {
-    margin: 1rem 0 0.25rem 0;
+  margin: 1rem 0 0.25rem 0;
 }
 
 .info-box p {
-    margin: 0.25rem;
+  margin: 0.25rem;
 }
 
 .info-box a {
-    text-decoration: underline;
-    color: lightblue;
+  text-decoration: underline;
+  color: lightblue;
 }
 
 .controller-btn {
-    height: 3rem;
-    font-size: 2rem;
-    margin: 2rem;
-    transition: all 0.3s ease-in;
+  height: 3rem;
+  font-size: 2rem;
+  margin: 2rem;
+  transition: all 0.3s ease-in;
 }
 
 .controller-btn:target {
-    text-decoration: underline;
-    font-weight: bold;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 .controller-btn:hover {
-    border: 1px solid #e0e0e0;
+  border: 1px solid #e0e0e0;
 }
 
 #pause:target ~ .planet-pos {
-    animation-play-state: paused;
+  animation-play-state: paused;
 }
 
 #play:target ~ .planet-pos {
-    animation-play-state: running;
+  animation-play-state: running;
 }
 
 /* SPACE BACKGROUND */
 
 #space {
-    height: 100%;
-    width: 100%;
-    position: relative;
-    display: block;
-    background: #111;
-    overflow: hidden;
-    /* animation: systemScale 4s ease-in 6s 1 forwards; */
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: block;
+  background: #111;
+  overflow: hidden;
+  /* animation: systemScale 4s ease-in 6s 1 forwards; */
 }
 
 .star {
-    position: absolute;
-    width: 2px;
-    height: 2px;
-    background: #FFF;
-    box-shadow: 0 0 5px #e0e0e0;
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  box-shadow: 0 0 5px #e0e0e0;
 }
 
 .star-2 {
-    left: 4%;
-    top: 69%;
+  left: 4%;
+  top: 69%;
 }
 
 .star-3 {
-    left: 93%;
-    top: 9%;
+  left: 93%;
+  top: 9%;
 }
 
 .star-4 {
-    left: 60%;
-    top: 95%;
+  left: 60%;
+  top: 95%;
 }
 
 .star-5 {
-    left: 92%;
-    top: 88%;
+  left: 92%;
+  top: 88%;
 }
 
 .star-6 {
-    left: 32%;
-    top: 13%;
+  left: 32%;
+  top: 13%;
 }
-
 
 /* SOLAR SYSTEM */
 
 #solar-system {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .pos {
-    position: absolute;
-    align-self: center;
-    height: 10rem;
-    width: 10rem;
+  position: absolute;
+  align-self: center;
+  height: 10rem;
+  width: 10rem;
 }
 
 #sun {
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-    background-color: #ffe200;
-    box-shadow: 0 0 10px yellow;
-    transform-style: preserve-3d;
-    animation: sunFlare 6s ease-in 0s infinite alternate;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: #ffe200;
+  box-shadow: 0 0 10px yellow;
+  transform-style: preserve-3d;
+  animation: sunFlare 6s ease-in 0s infinite alternate;
 }
-
 
 /* PLANETS
 Every planet has a counterpart .pos element positioned in the middle.
@@ -223,119 +221,119 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
 */
 
 .planet {
-    background-size: contain;
-    background-repeat: no-repeat;
-    animation: rotate 10s linear normal forwards infinite;
-    transform-style: preserve-3d;
-    transition: all 0.6s ease-in-out;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: rotate 10s linear normal forwards infinite;
+  transform-style: preserve-3d;
+  transition: all 0.6s ease-in-out;
 }
 
 #solar-system .planet:target {
-    width: 200px;
-    height: 200px;
-    margin: 6rem;
+  width: 200px;
+  height: 200px;
+  margin: 6rem;
 }
 
 .planet-pos {
-    animation-name: orbit;
-    animation-timing-function: linear;
-    animation-direction: normal;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
+  animation-name: orbit;
+  animation-timing-function: linear;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
 }
 
 .mercury-pos {
-    animation-duration: calc(var(--earth-orbital-period) / 12 * 3);
+  animation-duration: calc(var(--earth-orbital-period) / 12 * 3);
 }
 
 .mercury-pos .planet {
-    height: var(--mercury-size);
-    width: var(--mercury-size);
-    margin-top: 150px;
-    margin-left: 150px;
-    background-image: url("/assets/mercury.png");
+  height: var(--mercury-size);
+  width: var(--mercury-size);
+  margin-top: 150px;
+  margin-left: 150px;
+  background-image: url('/assets/mercury.png');
 }
 
 .venus-pos {
-    animation-duration: calc(var(--earth-orbital-period) / 12 * 7);
+  animation-duration: calc(var(--earth-orbital-period) / 12 * 7);
 }
 
 .venus-pos .planet {
-    height: var(--venus-size);
-    width: var(--venus-size);
-    margin-top: 170px;
-    margin-left: 170px;
-    background-image: url("/assets/venus.png");
+  height: var(--venus-size);
+  width: var(--venus-size);
+  margin-top: 170px;
+  margin-left: 170px;
+  background-image: url('/assets/venus.png');
 }
 
 .earth-pos {
-    animation-duration: var(--earth-orbital-period);
+  animation-duration: var(--earth-orbital-period);
 }
 
 .earth-pos .planet {
-    height: var(--earth-size);
-    width: var(--earth-size);
-    margin-top: 210px;
-    margin-left: 210px;
-    background-image: url("/assets/earth.png");
+  height: var(--earth-size);
+  width: var(--earth-size);
+  margin-top: 210px;
+  margin-left: 210px;
+  background-image: url('/assets/earth.png');
 }
 
 .mars-pos {
-    animation-duration: calc(var(--earth-orbital-period) / 12 * 23);
+  animation-duration: calc(var(--earth-orbital-period) / 12 * 23);
 }
 
 .mars-pos .planet {
-    height: var(--mars-size);
-    width: var(--mars-size);
-    margin-top: 250px;
-    margin-left: 250px;
-    background-image: url("/assets/mars.png");
+  height: var(--mars-size);
+  width: var(--mars-size);
+  margin-top: 250px;
+  margin-left: 250px;
+  background-image: url('/assets/mars.png');
 }
 
 .jupiter-pos {
-    animation-duration: calc(var(--earth-orbital-period) / 12 * 142);
+  animation-duration: calc(var(--earth-orbital-period) / 12 * 142);
 }
 
 .jupiter-pos .planet {
-    height: var(--jupiter-size);
-    width: var(--jupiter-size);
-    margin-top: 280px;
-    margin-left: 280px;
-    background-image: url("/assets/jupiter.png");
+  height: var(--jupiter-size);
+  width: var(--jupiter-size);
+  margin-top: 280px;
+  margin-left: 280px;
+  background-image: url('/assets/jupiter.png');
 }
 
 .saturn-pos {
-    animation-duration: calc(var(--earth-orbital-period) / 12 * 354);
+  animation-duration: calc(var(--earth-orbital-period) / 12 * 354);
 }
 
 .saturn-pos .planet {
-    height: var(--saturn-size);
-    width: var(--saturn-size);
-    margin-top: 330px;
-    margin-left: 330px;
-    background-image: url("/assets/saturn.png");
+  height: var(--saturn-size);
+  width: var(--saturn-size);
+  margin-top: 330px;
+  margin-left: 330px;
+  background-image: url('/assets/saturn.png');
 }
 
 .uranus-pos {
-    animation-duration: calc(var(--earth-orbital-period) / 12 * 1009);
+  animation-duration: calc(var(--earth-orbital-period) / 12 * 1009);
 }
 
 .uranus-pos .planet {
-    height: var(--uranus-size);
-    width: var(--uranus-size);
-    margin-top: 380px;
-    margin-left: 380px;
-    background-image: url("/assets/uranus.png");
+  height: var(--uranus-size);
+  width: var(--uranus-size);
+  margin-top: 380px;
+  margin-left: 380px;
+  background-image: url('/assets/uranus.png');
 }
 
 .neptune-pos {
-    animation-duration: calc(var(--earth-orbital-period) / 12 * 1979);
+  animation-duration: calc(var(--earth-orbital-period) / 12 * 1979);
 }
 
 .neptune-pos .planet {
-    height: var(--neptune-size);
-    width: var(--neptune-size);
-    margin-top: 420px;
-    margin-left: 420px;
-    background-image: url("/assets/neptune.png");
+  height: var(--neptune-size);
+  width: var(--neptune-size);
+  margin-top: 420px;
+  margin-left: 420px;
+  background-image: url('/assets/neptune.png');
 }
