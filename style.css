@@ -8,7 +8,7 @@ github@nikonet
 :root {
   /* EARTH ROOT SIZE. When adjusted, everything else scales accordingly */
   --github-baseurl: 'https://nikonet.github.io/css-solar-system/';
-  --earth-size: 5px;
+  --earth-size: 10px;
   --earth-orbital-period: 12s;
   --earth-orbital-distance: calc(var(--earth-size) * 11727);
   /* MERCURY */
@@ -207,8 +207,8 @@ main {
 }
 
 #sun {
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
   border-radius: 50%;
   background-color: #ffe200;
   box-shadow: 0 0 10px yellow;
@@ -250,8 +250,8 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
 .mercury-pos .planet {
   height: var(--mercury-size);
   width: var(--mercury-size);
-  margin-top: 150px;
-  margin-left: 150px;
+  margin-top: 200px;
+  margin-left: 200px;
   background-image: url('./assets/mercury.png');
 }
 
@@ -262,8 +262,8 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
 .venus-pos .planet {
   height: var(--venus-size);
   width: var(--venus-size);
-  margin-top: 170px;
-  margin-left: 170px;
+  margin-top: 220px;
+  margin-left: 220px;
   background-image: url('./assets/venus.png');
 }
 
@@ -274,8 +274,8 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
 .earth-pos .planet {
   height: var(--earth-size);
   width: var(--earth-size);
-  margin-top: 210px;
-  margin-left: 210px;
+  margin-top: 250px;
+  margin-left: 250px;
   background-image: url('./assets/earth.png');
 }
 
@@ -286,8 +286,8 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
 .mars-pos .planet {
   height: var(--mars-size);
   width: var(--mars-size);
-  margin-top: 250px;
-  margin-left: 250px;
+  margin-top: 280px;
+  margin-left: 280px;
   background-image: url('./assets/mars.png');
 }
 
@@ -298,8 +298,8 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
 .jupiter-pos .planet {
   height: var(--jupiter-size);
   width: var(--jupiter-size);
-  margin-top: 280px;
-  margin-left: 280px;
+  margin-top: 300px;
+  margin-left: 300px;
   background-image: url('./assets/jupiter.png');
 }
 
@@ -310,8 +310,8 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
 .saturn-pos .planet {
   height: var(--saturn-size);
   width: var(--saturn-size);
-  margin-top: 330px;
-  margin-left: 330px;
+  margin-top: 400px;
+  margin-left: 400px;
   background-image: url('./assets/saturn.png');
 }
 
@@ -322,8 +322,8 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
 .uranus-pos .planet {
   height: var(--uranus-size);
   width: var(--uranus-size);
-  margin-top: 380px;
-  margin-left: 380px;
+  margin-top: 480px;
+  margin-left: 480px;
   background-image: url('./assets/uranus.png');
 }
 
@@ -334,7 +334,7 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
 .neptune-pos .planet {
   height: var(--neptune-size);
   width: var(--neptune-size);
-  margin-top: 420px;
-  margin-left: 420px;
+  margin-top: 530px;
+  margin-left: 530px;
   background-image: url('./assets/neptune.png');
 }
