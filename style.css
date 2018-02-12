@@ -7,6 +7,7 @@ github@nikonet
 /* REFERENCE TRUE-TO-SCALE PLANETARY SIZES AND ORBITAL DISTANCES */
 :root {
   /* EARTH ROOT SIZE. When adjusted, everything else scales accordingly */
+  --github-baseurl: 'https://nikonet.github.io/css-solar-system/';
   --earth-size: 5px;
   --earth-orbital-period: 12s;
   --earth-orbital-distance: calc(var(--earth-size) * 11727);
@@ -263,7 +264,7 @@ We then set visuals on the planet elements and orbit animation on the .pos eleme
   width: var(--venus-size);
   margin-top: 170px;
   margin-left: 170px;
-  background-image: url('/assets/venus.png');
+  background-image: url('https://nikonet.github.io/css-solar-system/assets/venus.png');
 }
 
 .earth-pos {
